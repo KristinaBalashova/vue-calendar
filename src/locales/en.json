@@ -49,5 +49,7 @@
   "selectDate": "Select a date",
   "submit": "Submit",
   "openCalendar": "Open Calendar",
-  "openCalendarWithStartDate": "Open Calendar with Start Date"
+  "openCalendarWithStartDate": "Open Calendar with Start Date",
+  "selectedDate": "Selected date",
+  "noDateSelected": "No date selected"
 }
