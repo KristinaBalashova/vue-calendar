@@ -86,7 +86,7 @@ const setNewYear = (newYear) => {
             v-for="day in week"
             :key="day"
             class="day-cell"
-            :class="{ active: day === currentDay.value }"
+            :class="{ active: day === currentDay }"
             @click="selectDay(day)"
           >
             {{ day || "" }}
@@ -123,8 +123,8 @@ tbody td:hover {
   background-color: #f0f0f0;
 }
 
-tbody td .active {
-  background-color: #007bff;
+tbody td.active {
+  background-color: #ac5c5c;
   color: white;
 }
 
