@@ -24,13 +24,13 @@ const openCalendarWithDate = (date) => {
 </script>
 
 <template>
-  <main class="container">
+  <div class="container">
     <div class="buttons">
       <Button @click="openCalendar">{{ t('openCalendar') }}</Button>
       <Button @click="openCalendarForm">{{ t('openCalendarWithStartDate') }}</Button>
     </div>
     <CalendarForm v-if="isFormOpen" @submit-date="openCalendarWithDate" />
-  </main>
+  </div>
 </template>
 
 <style scoped>
@@ -47,5 +47,6 @@ const openCalendarWithDate = (date) => {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 20px;
 }
 </style>
