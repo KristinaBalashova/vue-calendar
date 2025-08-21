@@ -6,15 +6,11 @@ import { useI18n } from "vue-i18n";
 import { getFormattedDate } from "../utils";
 
 const router = useRouter();
-
 const { t } = useI18n();
 
 const initialDate = computed(() => {
-  if (!router.currentRoute.value.params.date) {
-    return null;
-  }
   const param = router.currentRoute.value.params.date;
-  return new Date(param);
+  return param ? new Date(param) : null;
 });
 
 const currentDate = ref(initialDate.value);
@@ -22,17 +18,17 @@ const currentDate = ref(initialDate.value);
 const setDate = (newDate) => {
   currentDate.value = newDate;
 };
+
+const dateToDisplay = computed(() => getFormattedDate(currentDate.value || new Date()));
+
 </script>
 
 <template>
   <div class="calendar-container">
-    <Calendar v-if="initialDate" :date="initialDate" @setDate="setDate" />
-    <Calendar v-else @setDate="setDate" />
+    <Calendar :date="initialDate || undefined" @setDate="setDate" />
     <p class="date-info">
       <span class="label">{{ t("selectedDate") }}:</span>
-      <span class="value">{{
-        currentDate ? getFormattedDate(currentDate) : new Date().toLocaleDateString()
-      }}</span>
+      <span class="value">{{ dateToDisplay }}</span>
     </p>
   </div>
 </template>
@@ -44,6 +40,7 @@ const setDate = (newDate) => {
   align-items: center;
   flex-direction: column;
 }
+
 .date-info {
   padding: 8px 12px;
   background-color: #f5f5f5;
@@ -52,6 +49,7 @@ const setDate = (newDate) => {
   color: #333;
   font-weight: 600;
 }
+
 .label {
   font-weight: 600;
   margin-right: 6px;
