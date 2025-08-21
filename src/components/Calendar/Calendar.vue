@@ -16,7 +16,10 @@ const props = defineProps({
   },
 });
 
-const currentDate = ref(props.date);
+const currentDate = ref(
+  typeof props.date === "string" ? new Date(props.date) : props.date
+);
+
 const currentMonth = ref(currentDate.value.getMonth());
 const currentYear = ref(currentDate.value.getFullYear());
 const currentDay = ref(currentDate.value.getDate());
@@ -37,12 +40,17 @@ const weekdaysShort = computed(() => {
   return weekdays.map((day) => ({ day: day.short, id: day.id }));
 });
 
-
-const dataForTable = computed(() => prepareMonthsData(firstDayOfMonth.value, daysInMonth.value));
+const dataForTable = computed(() =>
+  prepareMonthsData(firstDayOfMonth.value, daysInMonth.value)
+);
 
 const selectDay = (day) => {
-  currentDay.value = day;  
-  emit('setDate', new Date(currentYear.value, currentMonth.value, currentDay.value));
+  if (!day) return;
+  currentDay.value = day;
+  emit(
+    "setDate",
+    new Date(currentYear.value, currentMonth.value, currentDay.value)
+  );
 };
 
 const setNewMonth = (newMonth) => {
@@ -51,19 +59,25 @@ const setNewMonth = (newMonth) => {
 
 const setNewYear = (newYear) => {
   currentYear.value = newYear;
-  
 };
 </script>
 
 <template>
   <div class="calendar-box">
     <div class="month-picker">
-      <MonthPicker :month="currentMonth" :year="currentYear" @updateMonth="setNewMonth" @updateYear="setNewYear"/>
+      <MonthPicker
+        :month="currentMonth"
+        :year="currentYear"
+        @updateMonth="setNewMonth"
+        @updateYear="setNewYear"
+      />
     </div>
-    <table >
+    <table>
       <thead>
         <tr>
-          <th v-for="day in weekdaysShort" :key="day.id" class="weekday-button">{{ t(day.day) }}</th>
+          <th v-for="day in weekdaysShort" :key="day.id" class="weekday-button">
+            {{ t(day.day) }}
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -75,7 +89,7 @@ const setNewYear = (newYear) => {
             :class="{ active: day === currentDay.value }"
             @click="selectDay(day)"
           >
-            {{ day || '' }}
+            {{ day || "" }}
           </td>
         </tr>
       </tbody>
@@ -84,7 +98,6 @@ const setNewYear = (newYear) => {
 </template>
 
 <style scoped>
-
 .calendar-box {
   border: 1px solid #eee;
   border-radius: 8px;
@@ -110,7 +123,7 @@ tbody td:hover {
   background-color: #f0f0f0;
 }
 
-tbody td .active{
+tbody td .active {
   background-color: #007bff;
   color: white;
 }
@@ -121,5 +134,4 @@ tbody td .active{
 .weekday-button {
   cursor: pointer;
 }
-
 </style>

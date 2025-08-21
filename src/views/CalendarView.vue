@@ -10,7 +10,11 @@ const router = useRouter();
 const { t } = useI18n();
 
 const initialDate = computed(() => {
-  router.currentRoute.value.params.date;
+  if (!router.currentRoute.value.params.date) {
+    return null;
+  }
+  const param = router.currentRoute.value.params.date;
+  return new Date(param);
 });
 
 const currentDate = ref(initialDate.value);
@@ -22,10 +26,13 @@ const setDate = (newDate) => {
 
 <template>
   <div class="calendar-container">
-    <Calendar :date="initialDate" @setDate="setDate" />
+    <Calendar v-if="initialDate" :date="initialDate" @setDate="setDate" />
+    <Calendar v-else @setDate="setDate" />
     <p class="date-info">
       <span class="label">{{ t("selectedDate") }}:</span>
-      <span class="value">{{ currentDate ? getFormattedDate(currentDate) : t("noDateSelected") }}</span>
+      <span class="value">{{
+        currentDate ? getFormattedDate(currentDate) : t("noDateSelected")
+      }}</span>
     </p>
   </div>
 </template>
