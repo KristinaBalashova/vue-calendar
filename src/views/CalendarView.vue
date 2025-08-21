@@ -31,7 +31,7 @@ const setDate = (newDate) => {
     <p class="date-info">
       <span class="label">{{ t("selectedDate") }}:</span>
       <span class="value">{{
-        currentDate ? getFormattedDate(currentDate) : t("noDateSelected")
+        currentDate ? getFormattedDate(currentDate) : new Date().toLocaleDateString()
       }}</span>
     </p>
   </div>
