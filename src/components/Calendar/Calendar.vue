@@ -1,9 +1,10 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import MonthPicker from "./components/MonthPicker.vue";
 import { weekdays, months } from "./calendarData.js";
 import { useI18n } from "vue-i18n";
 import { prepareMonthsData } from "./utils.js";
+import useCalendar from "../../composables/useCalendar.js";
 
 const { t } = useI18n();
 
@@ -16,50 +17,22 @@ const props = defineProps({
   },
 });
 
-const currentDate = ref(
-  typeof props.date === "string" ? new Date(props.date) : props.date
-);
+const {
+  currentDate,
+  currentMonth,
+  currentYear,
+  currentDay,
+  weekdaysShort,
+  dataForTable,
+  selectDay,
+  setNewMonth,
+  setNewYear,
+} = useCalendar(props.date);
 
-const currentMonth = ref(currentDate.value.getMonth());
-const currentYear = ref(currentDate.value.getFullYear());
-const currentDay = ref(currentDate.value.getDate());
+watch(currentDate, (newVal) => {
+  emit("setDate", newVal);
+}, { deep: true });
 
-const firstDayOfMonth = computed(() => {
-  return new Date(currentYear.value, currentMonth.value, 1).getDay();
-});
-
-const daysInMonth = computed(() => {
-  return new Date(currentYear.value, currentMonth.value + 1, 0).getDate();
-});
-
-const weeksInMonth = computed(() => {
-  return Math.ceil(daysInMonth.value / 7);
-});
-
-const weekdaysShort = computed(() => {
-  return weekdays.map((day) => ({ day: day.short, id: day.id }));
-});
-
-const dataForTable = computed(() =>
-  prepareMonthsData(firstDayOfMonth.value, daysInMonth.value)
-);
-
-const selectDay = (day) => {
-  if (!day) return;
-  currentDay.value = day;
-  emit(
-    "setDate",
-    new Date(currentYear.value, currentMonth.value, currentDay.value)
-  );
-};
-
-const setNewMonth = (newMonth) => {
-  currentMonth.value = newMonth;
-};
-
-const setNewYear = (newYear) => {
-  currentYear.value = newYear;
-};
 </script>
 
 <template>
@@ -98,6 +71,7 @@ const setNewYear = (newYear) => {
 </template>
 
 <style scoped>
+
 .calendar-box {
   border: 1px solid #eee;
   border-radius: 8px;
