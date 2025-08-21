@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeVue from "../views/HomeVue.vue";
-import CalendarVue from "../views/CalendarVue.vue";
+import HomeView from "../views/HomeView.vue";
+import CalendarView from "../views/CalendarView.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeVue,
+    component: HomeView,
   },
   {
     path: "/calendar",
     name: "calendar",
-    component: CalendarVue,
+    component: CalendarView,
   },
 ];
 
