@@ -44,12 +44,12 @@ const setLocale = (newLocale) => {
 }
 
 .locale-button:hover {
-  border-color: #007bff;
+  border-color: #8c100789;
 }
 
 .locale-button.active {
-  border-color: #007bff;
-  background-color: #e6f0ff;
+  border-color: #8c100789;
+  background-color: #ffe6e65f;
   font-weight: bold;
 }
 </style>

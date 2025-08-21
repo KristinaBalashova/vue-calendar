@@ -124,8 +124,8 @@ tbody td:hover {
 }
 
 tbody td.active {
-  background-color: #ac5c5c;
-  color: white;
+  background-color: #ffe6e684;;
+  color: rgb(0, 0, 0);
 }
 
 .month-picker {
