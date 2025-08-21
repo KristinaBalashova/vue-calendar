@@ -1,0 +1,53 @@
+{
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "monthsShort": {
+    "january": "Jan",
+    "february": "Feb",
+    "march": "Mar",
+    "april": "Apr",
+    "may": "May",
+    "june": "Jun",
+    "july": "Jul",
+    "august": "Aug",
+    "september": "Sep",
+    "october": "Oct",
+    "november": "Nov",
+    "december": "Dec"
+  },
+  "weekdays": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday"
+  },
+  "weekdaysShort": {
+    "sunday": "Sun",
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat"
+  }, 
+  "title": "Calendar",
+  "selectDate": "Select a date",
+  "submit": "Submit",
+  "openCalendar": "Open Calendar",
+  "openCalendarWithStartDate": "Open Calendar with Start Date"
+}

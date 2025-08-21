@@ -1,0 +1,54 @@
+
+{
+  "months": {
+    "january": "Январь",
+    "february": "Февраль",
+    "march": "Март",
+    "april": "Апрель",
+    "may": "Май",
+    "june": "Июнь",
+    "july": "Июль",
+    "august": "Август",
+    "september": "Сентябрь",
+    "october": "Октябрь",
+    "november": "Ноябрь",
+    "december": "Декабрь"
+  },
+  "monthsShort": {
+    "january": "Янв",
+    "february": "Фев",
+    "march": "Мар",
+    "april": "Апр",
+    "may": "Май",
+    "june": "Июн",
+    "july": "Июл",
+    "august": "Авг",
+    "september": "Сен",
+    "october": "Окт",
+    "november": "Ноя",
+    "december": "Дек"
+  },
+  "weekdays": {
+    "sunday": "Воскресенье",
+    "monday": "Понедельник",
+    "tuesday": "Вторник",
+    "wednesday": "Среда",
+    "thursday": "Четверг",
+    "friday": "Пятница",
+    "saturday": "Суббота"
+  },
+  "weekdaysShort": {
+    "sunday": "Вс",
+    "monday": "Пн",
+    "tuesday": "Вт",
+    "wednesday": "Ср",
+    "thursday": "Чт",
+    "friday": "Пт",
+    "saturday": "Сб"
+  },
+  "title": "Календарь",
+  "selectDate": "Выберите дату",
+  "submit": "Отправить",
+  "openCalendar": "Открыть календарь",
+  "openCalendarWithStartDate": "Открыть календарь с начальной датой"
+}
