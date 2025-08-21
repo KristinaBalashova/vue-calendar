@@ -4,10 +4,10 @@ export const prepareMonthsData = (firstDayOfTheWeek: number, daysInMonth: number
   let currentWeek = Array(7).fill(null);
   let day = 1;
 
-  
   for (let i = 0; i < 7; i++) {
-    if (i >= firstDayOfTheWeek -1 && day <= daysInMonth) {
-      currentWeek[i] = day++;
+    if (i >= firstDayOfTheWeek - 1) {
+      currentWeek[i] = day;
+      day++;
     }
   }
   weeks.push(currentWeek);
@@ -15,9 +15,8 @@ export const prepareMonthsData = (firstDayOfTheWeek: number, daysInMonth: number
   while (day <= daysInMonth) {
     currentWeek = Array(7).fill(null);
     for (let i = 0; i < 7; i++) {
-      if (day <= daysInMonth) {
-        currentWeek[i] = day++;
-      }
+        currentWeek[i] = day;
+        day++;
     }
     weeks.push(currentWeek);
   }
