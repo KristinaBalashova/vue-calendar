@@ -1,0 +1,6 @@
+html, body, #app { height: 100%; }
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
