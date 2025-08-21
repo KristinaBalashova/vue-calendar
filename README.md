@@ -1,5 +1,16 @@
-# Vue 3 + TypeScript + Vite
+# Vue Calendar Component
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Vue.js](https://img.shields.io/badge/Vue-3.5.18-brightgreen)
+![Pinia](https://img.shields.io/badge/Pinia-3.0.3-blue)
+![Vue I18n](https://img.shields.io/badge/Vue--i18n-9.14.5-yellow)
+![Vue Router](https://img.shields.io/badge/Vue--Router-4.5.1-orange)
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Описание проекта
+
+Проект представляет собой компонент **календарь** на Vue.js (версии 3+), который позволяет:
+
+- Выбирать конкретную дату кликом по дню.
+- Переключать месяца и годы.
+- Инициализировать компонент с заданной датой в формате `YYYY-MM-DD`. Если дата не передана — берется текущая.
+- Слушать событие выбора даты (`@setDate`) и получать выбранную дату.
+- Менять язык отображения месяцев и дней недели с поддержкой **Vue I18n**.
