@@ -1,9 +1,7 @@
 <script setup>
-import { ref, computed, watch } from "vue";
+import { watch } from "vue";
 import MonthPicker from "./components/MonthPicker.vue";
-import { weekdays, months } from "./calendarData.js";
 import { useI18n } from "vue-i18n";
-import { prepareMonthsData } from "./utils.js";
 import useCalendar from "../../composables/useCalendar.js";
 
 const { t } = useI18n();
