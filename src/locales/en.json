@@ -51,5 +51,9 @@
   "openCalendar": "Open Calendar",
   "openCalendarWithStartDate": "Open Calendar with Start Date",
   "selectedDate": "Selected date",
-  "noDateSelected": "No date selected"
+  "noDateSelected": "No date selected",
+  "notFound": {
+    "message": "Page not found",
+    "button": "Go to home"
+  }
 }

@@ -52,5 +52,9 @@
   "openCalendar": "Открыть календарь",
   "openCalendarWithStartDate": "Открыть календарь с начальной датой",
   "selectedDate": "Выбранная дата",
-  "noDateSelected": "Дата не выбрана"
+  "noDateSelected": "Дата не выбрана",
+  "notFound": {
+    "message": "Страница не найдена",
+    "button": "На главную"
+  }
 }

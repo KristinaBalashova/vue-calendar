@@ -1,6 +1,9 @@
 <script setup>
 import { useRouter } from "vue-router";
 import Button from "../components/Button.vue";
+import { useI18n } from "vue-i18n";
+
+const {t} = useI18n();
 const router = useRouter();
 
 const goHome = () => {
@@ -11,8 +14,8 @@ const goHome = () => {
 <template>
   <div class="container">
     <h1>404</h1>
-    <p>Страница не найдена</p>
-    <Button @click="goHome">На главную</Button>
+    <p>{{ t('notFound.message') }}</p>
+    <Button @click="goHome">{{ t('notFound.button') }}</Button>
   </div>
 </template>
 
