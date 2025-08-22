@@ -3,9 +3,7 @@ import { weekdays } from "../components/Calendar/calendarData.js";
 import { prepareMonthsData } from "../components/Calendar/utils.js";
 
 const useCalendar = (initialDate) => {
-  const currentDate = ref(
-    typeof initialDate === "string" ? new Date(initialDate) : initialDate
-  );
+  const currentDate = ref(new Date(initialDate));
 
   const currentMonth = ref(currentDate.value.getMonth());
   const currentYear = ref(currentDate.value.getFullYear());
