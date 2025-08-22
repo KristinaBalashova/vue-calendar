@@ -7,8 +7,6 @@ const useCalendar = (initialDate) => {
     typeof initialDate === "string" ? new Date(initialDate) : initialDate
   );
 
-  console.log(currentDate, 'currentDate')
-
   const currentMonth = ref(currentDate.value.getMonth());
   const currentYear = ref(currentDate.value.getFullYear());
   const currentDay = ref(currentDate.value.getDate());
@@ -43,8 +41,9 @@ const useCalendar = (initialDate) => {
   };
 
   watch([currentYear, currentMonth, currentDay], ([year, month, day]) => {
-  currentDate.value = new Date(year, month, day);
-});
+    currentDate.value = new Date(year, month, day);
+  });
+  
   return {
     currentDate,
     currentMonth,
@@ -58,4 +57,4 @@ const useCalendar = (initialDate) => {
   };
 };
 
-export default useCalendar
+export default useCalendar;

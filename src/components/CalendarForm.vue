@@ -4,7 +4,7 @@ import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import Button from "./Button.vue";
 import Calendar from "./Calendar/Calendar.vue";
-import { getFormattedDate } from "../utils";
+import { formatDate } from "../utils";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -15,7 +15,7 @@ const emit = defineEmits(["submit-date"]);
 
 const submitDate = () => {
   if (selectedDate.value) {
-    const formattedDate = getFormattedDate(selectedDate.value);
+    const formattedDate = formatDate(selectedDate.value);
     emit("submit-date", formattedDate);
   }
 };
